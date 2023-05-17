@@ -1,0 +1,510 @@
+//<================================================================== FONTS ================================================================>\\
+
+// 100 - Thin (Hairline)
+// 200 - Extra Light (Ultra Light)
+// 300 - Light
+// 400 - Normal
+// 500 - Medium
+// 600 - Semi Bold (Demi Bold)
+// 700 - Bold
+// 800 - Extra Bold (Ultra Bold)
+// 900 - Black (Heavy)
+
+//&display=swap - оптимізація підвантаження шрифта
+//&subset=cyrillic-ext - підвантаження кириличної версії
+
+@font-face {
+    font-family: 'NT-Somic';
+    src: url('../fonts/NTSomic-Medium.woff2') format('woff2'),
+        url('../fonts/NTSomic-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NT-Somic';
+    src: url('../fonts/NTSomic-Bold.woff2') format('woff2'),
+        url('../fonts/NTSomic-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NT-Somic';
+    src: url('../fonts/NTSomic-Regular.woff2') format('woff2'),
+        url('../fonts/NTSomic-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('../fonts/Manrope-Regular.woff2') format('woff2'),
+        url('../fonts/Manrope-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('../fonts/Manrope-Light.woff2') format('woff2'),
+        url('../fonts/Manrope-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+// Змінна font-family
+$ff: 'Manrope';
+
+// Змінна font-size
+$fs: 16px;
+
+// Змінна font-weight
+$fw: 300;
+
+// Змінна color
+$fc: #fff;
+
+//<============================================================== CUSTOM RESET =============================================================>\\
+
+// Максимальна ширина обмежуючого контейнера
+$mw: 1425px;
+
+// Фоновий колір для body
+$bgc: #000;
+
+// Обнулення стилів
+@import 'reset';
+
+//<================================================================= DEFAULT ===============================================================>\\
+
+body._lock {
+	overflow: hidden;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	overflow: hidden;
+}
+
+.main {
+	flex: 1 1 auto;
+}
+
+._cont {
+	max-width: $mw + 30px;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-left: 100px;
+	margin-right: 395px;
+}
+
+//<======================================================== БАГАТОРАЗОВЕ ВИКОРИСТАННЯ ======================================================>\\
+
+h1 {
+	font: 500 99px/1.09 'NT-Somic';
+}
+
+h2 {
+	font: 300 16px/1.12 $ff;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #fff;
+}
+
+.btn {
+	font: 500 16px/1.56 'NT-Somic';
+	padding: 15px 35px;
+	border-radius: 40px;
+	background: #F4D877;
+	border: 2px solid transparent;
+	color: #000;
+	text-transform: uppercase;
+	text-align: center;
+	transition: all linear 0.2s;
+
+	&:hover {
+		border-color: #F4D877;
+		background: transparent;
+		color: #F4D877;
+	}
+}
+
+//<=================================================================== ХЕДЕР ===============================================================>\\
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: linear-gradient(180deg, rgba(0, 10, 46, 0.43) 0%, rgba(0, 10, 46, 0) 100%);
+	z-index: 100;
+
+	// .header__cont
+	&__cont {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 10px;
+		max-width: 1592px;
+		margin: 40px 228px 40px 100px;
+	}
+
+	// .header__logo
+	&__logo {
+		flex: 0 0 142px;
+		transition: all linear 0.2s;
+
+		// .header__logo:hover
+		&:hover {
+			transform: scale(0.95);
+		}
+
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	// .header__nav
+	&__nav {
+	}
+
+	// .header__burger
+	&__burger {
+		display: none;
+	}
+}
+
+.main-nav {
+	display: flex;
+	gap: 75px;
+
+	// .main-nav__actions
+	&__actions {
+	}
+
+	// .main-nav__link
+	&__link {
+		display: none;
+	}
+
+	// .main-nav__languages
+	&__languages {
+	}
+
+	// .main-nav__copyright
+	&__copyright {
+		display: none;
+	}
+
+	// .main-nav__menu
+	&__menu {
+	}
+}
+
+.lang-toggle {
+	position: relative;
+	text-transform: uppercase;
+
+	// .lang-toggle__current
+	&__current {
+		position: relative;
+		cursor: pointer;
+		padding-right: 10px;
+
+		// .lang-toggle__current::before
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			width: 7px;
+			height: 4px;
+			background: url(../img/home/language-arrow.svg) center/contain no-repeat;
+			transition: all linear 0.2s;
+		}
+
+		// .lang-toggle__current._active
+		&._active::before {
+			transform: translateY(-50%)rotate(-180deg);
+		}
+	}
+
+	// .lang-toggle__list
+	&__list {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+
+	}
+
+	// .lang-toggle__item
+	&__item {
+		margin: 10px 0;
+
+		// .lang-toggle__item._active
+		&._active {
+			display: none;
+		}
+
+		// .lang-toggle__item a
+		& a {
+			transition: all linear 0.2s;
+		}
+
+		// .lang-toggle__item a:hover
+		& a:hover {
+			opacity: 0.6;
+		}
+	}
+}
+
+.main-menu {
+	display: flex;
+	gap: 75px;
+
+	// .main-menu__item
+	&__item {
+
+		// .main-menu__item a
+		& a {
+			text-transform: uppercase;
+			transition: all linear 0.2s;
+		}
+
+		// .main-menu__item a:hover
+		& a:hover {
+			opacity: 0.6;
+		}
+	}
+}
+
+
+//<=================================================================== ФУТЕР ===============================================================>\\
+
+//<============================================================== EXTRA LINKS ==============================================================>\\
+
+.extra-links {
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100%;
+	display: flex;
+	align-items: flex-end;
+	z-index: 100;
+
+	// .extra-links__item:nth-child(2)
+	&__item:nth-child(2) {
+		background: #F4D877;
+	}
+
+	// .extra-links__item:nth-child(3)
+	&__item:nth-child(3) {
+		background: #07153B;
+	}
+}
+
+.extra-item {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+	padding: 37px 21px;
+
+	// .extra-item_current
+	&_current {
+		height: auto;
+
+		// .extra-item_current .extra-item__arrow
+		.extra-item__arrow {
+			transform: rotate(0deg);
+		}
+	}
+
+	// .extra-item a, .extra-item button
+	& a,
+	& button {
+		transition: all linear 0.2s;
+
+		// .extra-item a:hover, .extra-item button:hover
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+
+	// .extra-item__arrow
+	&__arrow {
+		display: block;
+		width: 45px;
+		height: 45px;
+		background: url(../img/home/arrow-top.svg) center/contain no-repeat;
+		transform: rotate(45deg);
+	}
+
+	// .extra-item__ico
+	&__ico {
+		width: 35px;
+		height: 35px;
+
+		// .extra-item__ico img
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	// .extra-item__name
+	&__name {
+		font: 400 24px/1.08 'NT-Somic';
+		text-transform: uppercase;
+		writing-mode: vertical-rl;
+	}
+}
+
+//<=============================================================== MAINSCREEN ==============================================================>\\
+
+.mainscreen {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	min-height: 100vh;
+	background: url(../img/home/mainscreen-bg.jpg) center/cover no-repeat;
+
+	// .mainscreen__cont
+	&__cont {
+		padding-top: 144px;
+		padding-bottom: 170px;
+	}
+
+	// .mainscreen__content
+	&__content {
+	}
+
+	// .mainscreen__title
+	&__title {
+		border-bottom: 1px solid #fff;
+		margin-bottom: 55px;
+	}
+
+	// .mainscreen__info
+	&__info {
+		display: flex;
+		gap: 47px;
+	}
+
+	// .mainscreen_btn
+	&_btn {
+		
+	}
+
+	// .mainscreen__text
+	&__text {
+		color: #ffffff99;
+		max-width: 395px;
+	}
+}
+
+//<=============================================================== PORTFOLIO ===============================================================>\\
+
+.portfolio {
+
+	// .portfolio__cont
+	&__cont {
+		padding-top: 174px;
+	}
+
+	// .portfolio__title
+	&__title {
+		margin-bottom: 60px;
+	}
+
+	// .portfolio__list
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: 40px;
+		row-gap: 45px;
+		margin-bottom: 60px;
+	}
+
+	// .portfolio__more
+	&__more{
+		text-align: center;
+	}
+}
+
+.item-portfolio {
+	width: calc(50% - 20px);
+
+	// .item-portfolio_big
+	&_big {
+		width: 100%;
+
+		.item-portfolio__text {
+			max-width: 652px;
+		}
+	}
+
+	// .item-portfolio__img
+	&__img {
+		display: block;
+		margin-bottom: 20px;
+		
+		// .item-portfolio__img img
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	// .item-portfolio__info
+	&__info {
+		display: flex;
+		gap: 10px;
+	}
+
+	// .item-portfolio__left, .item-portfolio__right
+	&__left,
+	&__right {
+		width: calc(50% - 5px);
+	}
+
+	// .item-portfolio__name
+	&__name {
+		font: 600 24px/1.2 $ff;
+	}
+
+	// .item-portfolio__platform
+	&__platform {
+		width: 90px;
+		margin-top: 22px;
+
+		// .item-portfolio__platform img
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	// .item-portfolio__text
+	&__text {
+		font: 300 16px/1.25 $ff;
+		color: #FFFFFF99;
+		max-width: 324px;
+	}
+}
