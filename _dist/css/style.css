@@ -191,7 +191,7 @@ body._lock {
   padding-right: 15px;
   padding-left: 15px;
   margin-left: 100px;
-  margin-right: 395px;
+  margin-right: 365px;
 }
 
 h1 {
@@ -202,10 +202,21 @@ h2 {
   font: 300 16px/1.12 "Manrope";
   padding-bottom: 10px;
   border-bottom: 1px solid #fff;
+  text-transform: uppercase;
 }
 
 .btn {
-  font: 500 16px/1.56 "NT-Somic";
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  font: 600 16px/1.56 "NT-Somic";
   padding: 15px 35px;
   border-radius: 40px;
   background: #F4D877;
@@ -222,6 +233,18 @@ h2 {
   border-color: #F4D877;
   background: transparent;
   color: #F4D877;
+}
+
+.btn_dark {
+  border-color: #F4D877;
+  background: transparent;
+  color: #F4D877;
+}
+
+.btn_dark:hover {
+  background: #F4D877;
+  border: 2px solid transparent;
+  color: #000;
 }
 
 .header {
@@ -368,6 +391,51 @@ h2 {
   opacity: 0.6;
 }
 
+.footer {
+  border-top: 1px solid #fff;
+}
+
+.footer__cont {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.author__logo {
+  display: block;
+  width: 40px;
+  height: 40px;
+  -webkit-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+.author__logo:hover {
+  -webkit-transform: scale(0.95);
+      -ms-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.author__logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.author__text {
+  font: 500 16px/1.56 "NT-Somic";
+}
+
 .extra-links {
   position: fixed;
   top: 0;
@@ -499,6 +567,7 @@ h2 {
 
 .portfolio__cont {
   padding-top: 174px;
+  padding-bottom: 120px;
 }
 
 .portfolio__title {
@@ -534,12 +603,12 @@ h2 {
   max-width: 652px;
 }
 
-.item-portfolio__img {
+.item-portfolio__ibox {
   display: block;
   margin-bottom: 20px;
 }
 
-.item-portfolio__img img {
+.item-portfolio__ibox img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
@@ -578,4 +647,402 @@ h2 {
   font: 300 16px/1.25 "Manrope";
   color: #FFFFFF99;
   max-width: 324px;
+}
+
+.about {
+  background: #000A2E;
+}
+
+.about__cont {
+  padding-top: 180px;
+  padding-bottom: 110px;
+}
+
+.about__title {
+  margin-bottom: 104px;
+}
+
+.about__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 70px;
+}
+
+.about__info {
+  width: calc(54% - 35px);
+}
+
+.about__ibox {
+  width: calc(46% - 35px);
+}
+
+.about__ibox img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.info-about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.info-about__title {
+  font: 500 54px/1.09 "NT-Somic";
+  margin-bottom: 27px;
+}
+
+.info-about__title strong {
+  color: #F4D877;
+  font-weight: 500;
+}
+
+.info-about__tbox {
+  color: #FFFFFF99;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+.info-about__tbox p:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.about-stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-column-gap: 50px;
+     -moz-column-gap: 50px;
+          column-gap: 50px;
+  row-gap: 10px;
+}
+
+.about-stats__nunber {
+  font: 500 36px/1.19 "NT-Somic";
+}
+
+.about-stats__name {
+  line-height: 1.5;
+  color: #F4D877;
+}
+
+.features {
+  background: #000A2E;
+}
+
+.features__cont {
+  padding-top: 110px;
+  padding-bottom: 134px;
+}
+
+.features__title {
+  margin-bottom: 73px;
+}
+
+.features__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-column-gap: 45px;
+     -moz-column-gap: 45px;
+          column-gap: 45px;
+  row-gap: 80px;
+  margin-bottom: 20px;
+}
+
+.features__item {
+  width: calc(33.33% - 30px);
+}
+
+.features__name {
+  font: 500 24px/1.2 "NT-Somic";
+  margin-bottom: 7px;
+}
+
+.features__name strong {
+  color: #F4D877;
+  font-weight: 500;
+}
+
+.features__text {
+  color: #FFFFFF99;
+  line-height: 1.5;
+}
+
+.features__link {
+  text-align: right;
+  padding-right: 16%;
+}
+
+.dialog__cont {
+  padding-top: 187px;
+  padding-bottom: 122px;
+}
+
+.dialog__phrase:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.phrase-dialog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 15px;
+}
+
+.phrase-dialog_client {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+.phrase-dialog_client .phrase-dialog__text {
+  position: relative;
+  padding-left: 30px;
+}
+
+.phrase-dialog_client .phrase-dialog__text::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 18px;
+  height: 4px;
+  background: #fff;
+}
+
+.phrase-dialog_team {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+}
+
+.phrase-dialog_team .phrase-dialog__item {
+  position: relative;
+  padding: 24px 45px 30px 60px;
+  border: 1px solid #182246;
+  border-radius: 30px;
+  min-width: 66%;
+  margin-right: 90px;
+}
+
+.phrase-dialog_team .phrase-dialog__item:last-child::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  right: -42px;
+  width: 90px;
+  height: 67px;
+  background: #000 url(../img/home/phrase-angle.svg) center/contain no-repeat;
+}
+
+.phrase-dialog_team .phrase-dialog__time {
+  bottom: 10px;
+  right: 15px;
+}
+
+.phrase-dialog__item {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 28px;
+}
+
+.phrase-dialog__text {
+  font: 500 36px/1.08 "NT-Somic";
+}
+
+.phrase-dialog__time {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #FFFFFF99;
+  padding-right: 22px;
+}
+
+.phrase-dialog__time::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 17px;
+  height: 9px;
+  background: url(../img/home/chat-tick.svg) center/contain no-repeat;
+}
+
+.phrase-dialog__deal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 23px;
+}
+
+.phrase-sites {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-column-gap: 22px;
+     -moz-column-gap: 22px;
+          column-gap: 22px;
+  row-gap: 10px;
+}
+
+.phrase-sites__item {
+  position: relative;
+  background: #000A2E;
+  padding: 11px 16px 14px;
+}
+
+.phrase-sites__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 34px 34px 0;
+  border-color: transparent #000000 transparent transparent;
+}
+
+.phrase-sites__ibox {
+  width: 35px;
+  height: 35px;
+  margin-bottom: 12px;
+}
+
+.phrase-sites__ibox img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.phrase-sites__name {
+  line-height: 1.18;
+  max-width: 130px;
+}
+
+.phrase-workflow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+}
+
+.phrase-workflow__item {
+  width: calc(33.33% - 8px);
+  max-width: 240px;
+}
+
+.phrase-workflow__ibox {
+  width: 98px;
+  height: 80px;
+  margin-bottom: 8px;
+}
+
+.phrase-workflow__ibox img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.phrase-workflow__title {
+  font: 500 24px/1.29 "NT-Somic";
+  margin-bottom: 5px;
+}
+
+.phrase-workflow__text {
+  color: #FFFFFFB2;
+  line-height: 1.5;
+}
+
+.partnership__cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 36px;
+  padding-top: 122px;
+  padding-bottom: 130px;
+}
+
+.partnership__left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.partnership__text {
+  font: 500 36px/1.5 "NT-Somic";
+  margin-bottom: 25px;
+}
+
+.partnership__right {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 400px;
+          flex: 0 0 400px;
+  padding-top: 20px;
+}
+
+.partnership__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 15px;
+}
+
+.partnership__item {
+  position: relative;
+  font: 600 18px/1.38 "NT-Somic";
+  color: #000;
+  background: #fff;
+  border-radius: 20px;
+  padding: 7px 10px 7px 33px;
+}
+
+.partnership__item::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background: url(../img/home/benefits-tick.svg) center/contain no-repeat;
 }
