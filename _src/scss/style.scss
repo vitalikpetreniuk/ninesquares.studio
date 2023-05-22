@@ -310,6 +310,152 @@ h2 {
 	}
 }
 
+@media (max-width: 1600px) {
+
+	.header {
+	
+		// .header__cont
+		&__cont {
+			gap: 10px;
+			max-width: 1592px;
+			margin: 40px 228px 40px 100px;
+		}
+	
+		// .header__logo
+		&__logo {
+			flex: 0 0 142px;
+			transition: all linear 0.2s;
+	
+			// .header__logo:hover
+			&:hover {
+				transform: scale(0.95);
+			}
+	
+			& img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
+		}
+	
+		// .header__nav
+		&__nav {
+		}
+	
+		// .header__burger
+		&__burger {
+			display: none;
+		}
+	}
+	
+	.main-nav {
+		display: flex;
+		gap: 75px;
+	
+		// .main-nav__actions
+		&__actions {
+		}
+	
+		// .main-nav__link
+		&__link {
+			display: none;
+		}
+	
+		// .main-nav__languages
+		&__languages {
+		}
+	
+		// .main-nav__copyright
+		&__copyright {
+			display: none;
+		}
+	
+		// .main-nav__menu
+		&__menu {
+		}
+	}
+	
+	.lang-toggle {
+		position: relative;
+		text-transform: uppercase;
+	
+		// .lang-toggle__current
+		&__current {
+			position: relative;
+			cursor: pointer;
+			padding-right: 10px;
+	
+			// .lang-toggle__current::before
+			&::before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				right: 0;
+				transform: translateY(-50%);
+				width: 7px;
+				height: 4px;
+				background: url(../img/home/language-arrow.svg) center/contain no-repeat;
+				transition: all linear 0.2s;
+			}
+	
+			// .lang-toggle__current._active
+			&._active::before {
+				transform: translateY(-50%)rotate(-180deg);
+			}
+		}
+	
+		// .lang-toggle__list
+		&__list {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 100%;
+	
+		}
+	
+		// .lang-toggle__item
+		&__item {
+			margin: 10px 0;
+	
+			// .lang-toggle__item._active
+			&._active {
+				display: none;
+			}
+	
+			// .lang-toggle__item a
+			& a {
+				transition: all linear 0.2s;
+			}
+	
+			// .lang-toggle__item a:hover
+			& a:hover {
+				opacity: 0.6;
+			}
+		}
+	}
+	
+	.main-menu {
+		display: flex;
+		gap: 75px;
+	
+		// .main-menu__item
+		&__item {
+	
+			// .main-menu__item a
+			& a {
+				text-transform: uppercase;
+				transition: all linear 0.2s;
+			}
+	
+			// .main-menu__item a:hover
+			& a:hover {
+				opacity: 0.6;
+			}
+		}
+	}
+}
+
 //<================================================================== ФУТЕР ===============================================================>\\
 
 .footer {
@@ -380,6 +526,7 @@ h2 {
 }
 
 .extra-item {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -389,6 +536,9 @@ h2 {
 
 	// .extra-item_current
 	&_current {
+		position: absolute;
+		bottom: 0;
+		right: 100%;
 		height: auto;
 
 		// .extra-item_current .extra-item__arrow
@@ -435,6 +585,30 @@ h2 {
 		font: 400 24px/1.08 'NT-Somic';
 		text-transform: uppercase;
 		writing-mode: vertical-rl;
+	}
+}
+
+@media (max-width: 1600px) {
+	
+	.extra-item {
+		padding: 25px 15px;
+	
+		// .extra-item__arrow
+		&__arrow {
+			width: 35px;
+			height: 35px;
+		}
+	
+		// .extra-item__ico
+		&__ico {
+			width: 30px;
+			height: 30px;
+		}
+	
+		// .extra-item__name
+		&__name {
+			font-size: 20px;
+		}
 	}
 }
 
