@@ -11,5 +11,12 @@ $(function() {
 
 		$('html').animate({scrollTop: $('body').offset().top }, 500);
 	})
+
+	$('.header__burger').on('click', function() {
+		
+		$(this).toggleClass('_active');
+		$('.main-nav').toggleClass('_active');
+		$('body').toggleClass('_lock');
+	})
 	
 })
