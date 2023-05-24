@@ -486,7 +486,7 @@ h2 {
 		width: 100%;
 		height: calc(100% - 62px);
 		background: url(../img/home/burger-bg.jpg) center/cover no-repeat;
-		flex-direction: column-reverse;
+		flex-direction: column;
 		justify-content: flex-start;
 		align-items: center;
 		gap: 60px;
@@ -617,6 +617,10 @@ h2 {
 	// .extra-links__item:nth-child(2)
 	&__item:nth-child(2) {
 		background: #F4D877;
+
+		.extra-item__name {
+			color: #000;
+		}
 	}
 
 	// .extra-links__item:nth-child(3)
@@ -825,6 +829,7 @@ h2 {
 
 	// .mainscreen__text
 	&__text {
+		line-height: 1.5;
 		color: #ffffff99;
 		max-width: 395px;
 	}
