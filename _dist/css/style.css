@@ -269,7 +269,7 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   gap: 10px;
-  max-width: 1592px;
+  max-width: 2172px;
   margin: 40px 228px 40px 100px;
 }
 
@@ -280,12 +280,6 @@ h2 {
   -webkit-transition: all linear 0.2s;
   -o-transition: all linear 0.2s;
   transition: all linear 0.2s;
-}
-
-.header__logo:hover {
-  -webkit-transform: scale(0.95);
-      -ms-transform: scale(0.95);
-          transform: scale(0.95);
 }
 
 .header__logo img {
@@ -604,7 +598,9 @@ h2 {
       -ms-flex-pack: end;
           justify-content: flex-end;
   min-height: 100vh;
-  background: url(../img/home/mainscreen-bg.jpg) center/cover no-repeat;
+  background: #040A37;
+  background: -o-radial-gradient(at center, #003385, #040A37);
+  background: radial-gradient(at center, #003385, #040A37);
 }
 
 .mainscreen__cont {
@@ -613,6 +609,7 @@ h2 {
 }
 
 .mainscreen__title {
+  padding-bottom: 10px;
   border-bottom: 1px solid #fff;
   margin-bottom: 55px;
 }
@@ -637,8 +634,9 @@ h2 {
 }
 
 .mainscreen__text {
+  font-weight: 200;
   line-height: 1.5;
-  color: #ffffff99;
+  color: #fff;
   max-width: 395px;
 }
 
@@ -678,18 +676,39 @@ h2 {
 
 .item-portfolio_big .item-portfolio__text {
   max-width: 652px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .item-portfolio__ibox {
   display: block;
   margin-bottom: 20px;
+  background: #ffffff;
 }
 
 .item-portfolio__ibox img {
+  display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-mask-image: linear-gradient(45deg, #000 25%, rgba(0, 0, 0, 0.2) 50%, #000 75%);
+  mask-image: linear-gradient(45deg, #000 25%, rgba(0, 0, 0, 0.2) 50%, #000 75%);
+  -webkit-mask-size: 800%;
+  mask-size: 800%;
+  -webkit-mask-position: 0;
+  mask-position: 0;
+}
+
+.item-portfolio__ibox img.mask {
+  transition: mask-position 2s ease, -webkit-mask-position 2s ease;
+  -webkit-mask-position: 120%;
+  mask-position: 120%;
+  opacity: 1;
 }
 
 .item-portfolio__info {
@@ -705,12 +724,12 @@ h2 {
 }
 
 .item-portfolio__name {
-  font: 600 24px/1.2 "Manrope";
+  font: bold 24px/1.2 "NT-Somic";
 }
 
 .item-portfolio__platform {
-  width: 90px;
-  margin-top: 22px;
+  width: 67px;
+  margin-top: 12px;
 }
 
 .item-portfolio__platform img {
@@ -724,6 +743,12 @@ h2 {
   font: 300 16px/1.25 "Manrope";
   color: #FFFFFF99;
   max-width: 324px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* number of lines to show */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .about {
@@ -759,6 +784,12 @@ h2 {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.about__ibox video {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .info-about {
@@ -817,7 +848,7 @@ h2 {
   row-gap: 10px;
 }
 
-.about-stats__nunber {
+.about-stats__number {
   font: 500 36px/1.19 "NT-Somic";
 }
 
@@ -832,7 +863,7 @@ h2 {
 
 .features__cont {
   padding-top: 110px;
-  padding-bottom: 134px;
+  padding-bottom: 86px;
 }
 
 .features__title {
@@ -849,7 +880,7 @@ h2 {
      -moz-column-gap: 45px;
           column-gap: 45px;
   row-gap: 80px;
-  margin-bottom: 20px;
+  margin-bottom: 67px;
 }
 
 .features__item {
@@ -872,8 +903,7 @@ h2 {
 }
 
 .features__link {
-  text-align: right;
-  padding-right: 16%;
+  text-align: center;
 }
 
 .dialog__cont {
@@ -943,7 +973,7 @@ h2 {
 }
 
 .phrase-dialog_team .phrase-dialog__time {
-  bottom: 10px;
+  bottom: 15px;
   right: 15px;
 }
 
@@ -1135,6 +1165,23 @@ h2 {
   background: url(../img/home/benefits-tick.svg) center/contain no-repeat;
 }
 
+@media (min-width: 1921px) {
+  section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .mainscreen {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 @media (max-width: 1600px) {
   ._cont {
     margin-left: 65px;
@@ -1250,11 +1297,6 @@ h2 {
 
   .item-portfolio__name {
     font-size: 20px;
-  }
-
-  .item-portfolio__platform {
-    width: 80px;
-    margin-top: 18px;
   }
 
   .item-portfolio__text {
@@ -1454,8 +1496,16 @@ h2 {
 }
 
 @media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
   h1 {
     font-size: 50px;
+  }
+
+  h2 {
+    font-size: 15px;
   }
 
   .header__logo {
@@ -1473,7 +1523,7 @@ h2 {
     top: -100%;
     left: 0;
     width: 100%;
-    height: calc(100% - 62px);
+    height: calc(100% - 49px);
     background: url(../img/home/burger-bg.jpg) center/cover no-repeat;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1536,6 +1586,14 @@ h2 {
     gap: 30px;
   }
 
+  .main-menu .main-menu__item {
+    font-size: 14px;
+  }
+
+  .main-nav__copyright {
+    font-size: 14px;
+  }
+
   .extra-item__arrow {
     width: 17px;
     height: 17px;
@@ -1543,6 +1601,10 @@ h2 {
 
   .extra-item__name {
     font-size: 14px;
+  }
+
+  .mainscreen {
+    background: url(../img/home/mainscreen-mobile-bg.jpg) center/cover no-repeat;
   }
 
   .mainscreen__title {
@@ -1591,8 +1653,16 @@ h2 {
   }
 
   .phrase-dialog_team .phrase-dialog__item {
-    padding: 14px 25px 30px 20px;
-    margin-right: 40px;
+    width: 75%;
+    max-width: 284px;
+    padding: 15px 15px 30px 15px;
+    margin-right: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+
+  .phrase-dialog_team .phrase-dialog__time {
+    bottom: 10px;
   }
 
   .phrase-dialog_team .phrase-dialog__item:last-child::before {
@@ -1617,6 +1687,15 @@ h2 {
     gap: 11px;
   }
 
+  .phrase-sites__item {
+    padding: 10px 10px 20px;
+  }
+
+  .phrase-sites__item .phrase-sites__name {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
   .phrase-sites__item::before {
     border-width: 0 25px 25px 0;
   }
@@ -1638,6 +1717,26 @@ h2 {
   .phrase-workflow__item {
     width: 100%;
     max-width: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .phrase-workflow__item .phrase-workflow__title {
+    margin-left: 15px;
+    max-width: calc(100% - 88px);
+    line-height: 24px;
+  }
+
+  .phrase-workflow__item .phrase-workflow__text {
+    font-size: 12px;
+    line-height: 18px;
+    width: 100%;
   }
 
   .phrase-workflow__ibox {
@@ -1737,7 +1836,6 @@ h2 {
   }
 
   .item-portfolio__platform {
-    width: 77px;
     margin-top: 0;
   }
 
