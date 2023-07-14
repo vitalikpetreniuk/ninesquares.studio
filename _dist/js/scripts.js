@@ -75,6 +75,19 @@ $(function() {
 			counters = 1;
 		}
 	})
+
+	if($('.swiper').length) {
+
+		new Swiper('.nav-team', {
+
+			slideToClickedSlide: true,
+			slidesPerView: 'auto',
+			// slidesPerView: 4,
+			spaceBetween: 15,
+			freeMode: true,
+			grabCursor: true,
+		});
+	}
 })
 
 function updatedProjects() {
